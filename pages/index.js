@@ -1,9 +1,14 @@
-import styles from '../styles/Home.module.css'
+import classes from '../styles/Home.module.css'
+import {tokens} from '../data/dummy-data'
+import TokenCard from '../components/ui/TokenCard/TokenCard'
 
-export default function Home() {
+export default function HomePage() {
+
   return (
-    <div className={styles.container}>
-      <h1>Coin Raven</h1>
+    <div className={classes.Home}>
+      <ul className={classes.HomeCards}>
+        {tokens.map(token => <TokenCard data={token} />)}
+      </ul>
     </div>
   )
 }
